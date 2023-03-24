@@ -62,11 +62,11 @@ class _State extends State<Mainpage> {
             fontWeight: FontWeight.normal
         ),
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home),label: "首页",activeIcon: Icon(Icons.home_outlined)),
-          BottomNavigationBarItem(icon: Icon(Icons.person),label: "通讯录"),
+          BottomNavigationBarItem(icon: Icon(Icons.home),label: "圈子"),
+          BottomNavigationBarItem(icon: Icon(Icons.recommend_outlined),label: "推荐"),
           BottomNavigationBarItem(icon: Icon(Icons.find_in_page),label: "发现"),
-          BottomNavigationBarItem(icon: Icon(Icons.savings_outlined),label: "人脉"),
-          BottomNavigationBarItem(icon: Icon(Icons.outlet_outlined),label: "我"),
+          BottomNavigationBarItem(icon: Icon(Icons.square_rounded),label: "广场"),
+          BottomNavigationBarItem(icon: Icon(Icons.person),label: "我的"),
         ],
 
         onTap: (index){

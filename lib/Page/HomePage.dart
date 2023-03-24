@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Text("Good Morning,"),
                               Gap(8),
-                              Text("Book Tickets",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                              Text("Gentleman",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
                             ],
 
                           ),
