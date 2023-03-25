@@ -1,5 +1,9 @@
+import 'package:bin_quan/Config/AppLayout.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:gap/gap.dart';
+import '../Config/AppLayout.dart';
+import '../Config/AppColors.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
 
@@ -13,73 +17,88 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     print("HomePage_build");
     return  Scaffold(
-      backgroundColor: Color(0xffeeedf2),
-      // appBar: AppBar(
-      //   title: Text("首页 $_count"),
-      // ),
-      body: ListView(
-        children: [
-          SafeArea(
-            child: Container(
-              margin: EdgeInsets.all(20.0),
-              child: Column(
-                children: [
-                  Gap(36),
-                  // IntrinsicHeight 和 VerticalDivider搭配使用撑满父视图
-                  IntrinsicHeight(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Good Morning,"),
-                              Gap(8),
-                              Text("Gentleman",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                            ],
+      backgroundColor: Colors.pink.shade50,
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: AppColors.mainColos,
+        elevation: 0,
+        title: Text("冠名婚恋",style: TextStyle(color: Colors.white,fontSize: 18),textAlign: TextAlign.center,),
+      ),
+      body: Container(
 
-                          ),
-                        ),
-                        SizedBox(width: 10,),
-                        // Gap(1, color: Colors.blueGrey,crossAxisExtent: 50,),
-                        // VerticalDivider(
-                        //   color: Colors.red,
-                        //   width: 1.0,
-                        // ),
-                        SizedBox(width: 10,),
-                        Container(
-                          height: 50,
-                          width: 50,
-                          // clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(25)),
-                              border: new Border.all(color: Colors.grey, width: 1), // 边色与边宽度
-                            image: DecorationImage(image: AssetImage("assets/images/headerIcon.jpg"),
+        decoration: BoxDecoration(
+          borderRadius:  BorderRadius.all(Radius.circular(20)),
 
-                            )
-                          ),
-                          // child:  Image.asset("assets/images/headerIcon.jpg",fit:BoxFit.contain,),
-                        ),
+        ),
 
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+        height: 280,
+        child: ListView.builder(itemBuilder: (BuildContext context,int index){
+
+          return Container(
+            clipBehavior: Clip.hardEdge,
+            margin: EdgeInsets.fromLTRB(20, 20, 0, 20),
+            width:appLayout.size(context).width*0.85,
+            decoration: BoxDecoration(
+              color: Colors.red,
+              borderRadius:  BorderRadius.all(Radius.circular(12)),
             ),
-          )
-        ],
+            child:Stack(
+
+              fit: StackFit.passthrough,
+
+              children: [
+                Positioned(child: Image.asset("assets/images/headerIcon.jpg",fit: BoxFit.cover,)),
+                Positioned(child: Opacity(opacity: 1,child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black54,
+                    // borderRadius:  BorderRadius.all(Radius.circular(12)),
+
+                  ),
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Text("全国专科以上相亲群",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white),)
+                        ],
+                      ),
+                      // SizedBox(height: 5,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("66881入圈",style: TextStyle(fontSize: 14,fontWeight: FontWeight.normal,color: Colors.white),),
+                          ElevatedButton(onPressed: (){
+                                print("圈子-点击查看");
+                          },
+                              child: Text("点击查看",style: TextStyle(fontSize: 14,fontWeight: FontWeight.normal,color: Colors.white),),
+                            style: ButtonStyle(
+                                shape: MaterialStateProperty.all(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                        BorderRadius.circular(
+                                            20))),
+                              backgroundColor: MaterialStateProperty.all(AppColors.mainColos),
+
+                            ),
+                          ),
+
+                        ],
+                      )
+                    ]
+                  ),
+
+                ),),
+                  bottom: 0,left: 0,right: 0,
+                ),
+              ],
+            ),
+          );
+        },
+          scrollDirection: Axis.horizontal,
+          itemCount: 5,
+        ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        setState(() {
-          _count++;
-        }
-        );
-      },
-      child: Icon(Icons.add),
-      ),
+
     );
   }
 }

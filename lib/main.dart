@@ -4,7 +4,7 @@ import 'package:bin_quan/Page/FindPage.dart';
 import 'package:bin_quan/Page/ContactPage.dart';
 import 'package:bin_quan/Page/SuperMan.dart';
 import 'package:bin_quan/Page/MyPage.dart';
-
+import 'package:bin_quan/Config/AppColors.dart';
 void main() {
   runApp(MyApp());
 
@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     print("MyApp-build");
     return MaterialApp(
+
       title: "WEB3.0",
       home: Mainpage(),
       theme: ThemeData(
-
         splashColor: Colors.transparent, // 点击时的高亮效果设置为透明
         highlightColor: Colors.transparent, // 长按时的扩散效果设置为透
       ),
@@ -44,20 +44,21 @@ class _State extends State<Mainpage> {
   Widget build(BuildContext context) {
     print("mian-build");
     return  Scaffold(
+
       body: allPages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,
         elevation: 8,
-        selectedItemColor: Color(0xff526480),
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: AppColors.mainColos,
+        unselectedItemColor: AppColors.unselectColos,
         selectedLabelStyle: TextStyle(
-          color:  Color(0xff526480),
+          color:  AppColors.mainColos,
             fontSize: 10,
           fontWeight: FontWeight.bold
         ),
         unselectedLabelStyle:TextStyle(
-            color:  Colors.grey,
+            color:  AppColors.unselectColos,
             fontSize: 10,
             fontWeight: FontWeight.normal
         ),
