@@ -5,6 +5,8 @@ import 'package:bin_quan/Page/ContactPage.dart';
 import 'package:bin_quan/Page/SuperMan.dart';
 import 'package:bin_quan/Page/MyPage.dart';
 import 'package:bin_quan/Config/AppColors.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
   runApp(MyApp());
 
@@ -21,8 +23,10 @@ class MyApp extends StatelessWidget {
       title: "WEB3.0",
       home: Mainpage(),
       theme: ThemeData(
-        splashColor: Colors.transparent, // 点击时的高亮效果设置为透明
-        highlightColor: Colors.transparent, // 长按时的扩散效果设置为透
+          primaryColor: AppColors.mainColos,
+          splashColor: Colors.transparent, // 点击时的高亮效果设置为透明
+          highlightColor: Colors.transparent, // 长按时的扩散效果设置为透
+
       ),
     );
   }
