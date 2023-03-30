@@ -21,10 +21,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     print("HomePage_build");
     return  Scaffold(
-      backgroundColor: Colors.pink.shade50,
+      backgroundColor: AppColors.allBgColor,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: AppColors.mainColos,
+        backgroundColor: AppColors.mainColor,
         elevation: 0,
         title: Text("冠名婚恋",style: TextStyle(color: Colors.white,fontSize: 18),textAlign: TextAlign.center,),
       ),
@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                                               borderRadius:
                                               BorderRadius.circular(
                                                   20))),
-                                      backgroundColor: MaterialStateProperty.all(AppColors.mainColos),
+                                      backgroundColor: MaterialStateProperty.all(AppColors.mainColor),
 
                                     ),
                                   ),
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                             TextButton.icon(
                               style: ButtonStyle(
                                 overlayColor:  MaterialStateProperty.all<Color>(Colors.transparent),
-                                foregroundColor: MaterialStateProperty.all<Color>(AppColors.mainColos),
+                                foregroundColor: MaterialStateProperty.all<Color>(AppColors.mainColor),
                               ),
                                 onPressed: (){
                                   print("换一换");

@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
       title: "WEB3.0",
       home: Mainpage(),
       theme: ThemeData(
-          primaryColor: AppColors.mainColos,
+          primaryColor: AppColors.mainColor,
+          primarySwatch: AppColors.mainColor,
           splashColor: Colors.transparent, // 点击时的高亮效果设置为透明
           highlightColor: Colors.transparent, // 长按时的扩散效果设置为透
 
@@ -54,15 +55,15 @@ class _State extends State<Mainpage> {
         currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,
         elevation: 8,
-        selectedItemColor: AppColors.mainColos,
-        unselectedItemColor: AppColors.unselectColos,
+        selectedItemColor: AppColors.mainColor,
+        unselectedItemColor: AppColors.unselectColor,
         selectedLabelStyle: TextStyle(
-          color:  AppColors.mainColos,
+          color:  AppColors.mainColor,
             fontSize: 10,
           fontWeight: FontWeight.bold
         ),
         unselectedLabelStyle:TextStyle(
-            color:  AppColors.unselectColos,
+            color:  AppColors.unselectColor,
             fontSize: 10,
             fontWeight: FontWeight.normal
         ),

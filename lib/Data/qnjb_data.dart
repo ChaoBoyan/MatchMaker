@@ -21,6 +21,11 @@ class qnjbTagModel {
   // Map postColors;
   qnjbTagModel(this.position,this.pcolor);
 }
+class qnjbSetModel {
+  String title = "";
+  Widget image;
+  qnjbSetModel(this.title,this.image);
+}
 
 
 class qnjbData {
@@ -35,12 +40,12 @@ class qnjbData {
 
   static final tagList = [
 
-    [qnjbTagModel("自由职业", Colors.blue[300]),qnjbTagModel("无房", Colors.blueAccent),qnjbTagModel("无车",AppColors.mainColos),qnjbTagModel("10W以下", Colors.grey)],
-    [qnjbTagModel("主播", Colors.blue[300]),qnjbTagModel("1套房", Colors.blueAccent),qnjbTagModel("玛莎",AppColors.mainColos),qnjbTagModel("10W以下", Colors.grey)],
-    [qnjbTagModel("模特", Colors.blue[300]),qnjbTagModel("2套房", Colors.blueAccent),qnjbTagModel("718",AppColors.mainColos),qnjbTagModel("10W以下", Colors.grey)],
-    [qnjbTagModel("网店店长", Colors.blue[300]),qnjbTagModel("别墅", Colors.blueAccent),qnjbTagModel("帕拉梅拉",AppColors.mainColos),qnjbTagModel("10W以下", Colors.grey)],
-    [qnjbTagModel("服务员", Colors.blue[300]),qnjbTagModel("无房", Colors.blueAccent),qnjbTagModel("无车",AppColors.mainColos),qnjbTagModel("10W以下", Colors.grey)],
-    [qnjbTagModel("秘书", Colors.blue[300]),qnjbTagModel("N套房", Colors.blueAccent),qnjbTagModel("奔驰",AppColors.mainColos),qnjbTagModel("10W以下", Colors.grey)],
+    [qnjbTagModel("自由职业", Colors.blue[300]),qnjbTagModel("无房", Colors.blueAccent),qnjbTagModel("无车",AppColors.mainColor),qnjbTagModel("10W以下", Colors.grey)],
+    [qnjbTagModel("主播", Colors.blue[300]),qnjbTagModel("1套房", Colors.blueAccent),qnjbTagModel("玛莎",AppColors.mainColor),qnjbTagModel("10W以下", Colors.grey)],
+    [qnjbTagModel("模特", Colors.blue[300]),qnjbTagModel("2套房", Colors.blueAccent),qnjbTagModel("718",AppColors.mainColor),qnjbTagModel("10W以下", Colors.grey)],
+    [qnjbTagModel("网店店长", Colors.blue[300]),qnjbTagModel("别墅", Colors.blueAccent),qnjbTagModel("帕拉梅拉",AppColors.mainColor),qnjbTagModel("10W以下", Colors.grey)],
+    [qnjbTagModel("服务员", Colors.blue[300]),qnjbTagModel("无房", Colors.blueAccent),qnjbTagModel("无车",AppColors.mainColor),qnjbTagModel("10W以下", Colors.grey)],
+    [qnjbTagModel("秘书", Colors.blue[300]),qnjbTagModel("N套房", Colors.blueAccent),qnjbTagModel("奔驰",AppColors.mainColor),qnjbTagModel("10W以下", Colors.grey)],
     // qnjbTagModel( "主播", Colors.blueAccent),
     // qnjbTagModel( "模特", AppColors.mainColos),
     // qnjbTagModel( "网店店长", Colors.grey),
@@ -48,4 +53,11 @@ class qnjbData {
     // qnjbTagModel( "秘书", Colors.green),
   ];
 
+//  设置
+  static final setMyList = [
+    qnjbSetModel("分享我的名片", Icon(Icons.share,color: Colors.greenAccent,)),
+    qnjbSetModel("隐私和安全", Icon(Icons.safety_check,color: Colors.lightGreen,)),
+    qnjbSetModel("关于我们", Icon(Icons.person,color: Colors.blueGrey,)),
+    qnjbSetModel("设置", Icon(Icons.settings,color: Colors.deepOrangeAccent,)),
+  ];
 }
