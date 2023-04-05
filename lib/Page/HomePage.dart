@@ -159,6 +159,7 @@ class _HomePageState extends State<HomePage> {
                             clipBehavior: Clip.hardEdge,
                           ),
                           SizedBox(width: 12,),
+
                           Expanded(
                             child: Container(
                               child: Column(
@@ -212,6 +213,7 @@ class _HomePageState extends State<HomePage> {
                                 ],
                               ),
                               // color: Colors.blue,
+                              // height: 133,
                             ),
                           ),
                           SizedBox(width: 10,),
