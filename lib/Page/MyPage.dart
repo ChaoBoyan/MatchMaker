@@ -214,10 +214,37 @@ class _MyPageState extends State<MyPage> {
             SliverToBoxAdapter(
               child: Container(
                 margin: EdgeInsets.fromLTRB(20, 4, 20, 0),
-                height: 148,
+                height: 108,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.favorite_rounded,color: AppColors.mainColor,size: 50,),
+                        Text("我的喜欢",style: TextStyle(fontSize: 18, color: Colors.black87),),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.credit_card,color: Colors.lightGreen,size: 50,),
+                        Text("我的认证",style: TextStyle(fontSize: 18, color: Colors.black87),),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.phone,color: Colors.blueGrey,size: 50,),
+                        Text("我的客服",style: TextStyle(fontSize: 18, color: Colors.black87),),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),
