@@ -37,9 +37,15 @@ class qnjbData {
     qnjbModel("莉莉", "日本", "25", "168", "高中", "https://tse3-mm.cn.bing.net/th/id/OIP-C._htIjL23R-KrrLS_J3L4CgHaJa?w=182&h=231&c=7&r=0&o=5&dpr=1.3&pid=1.7"),
     qnjbModel("舒舒", "韩国", "28", "165", "本科", "https://tse3-mm.cn.bing.net/th/id/OIP-C.TjebbUwPdSZVCV2sjmoP4AHaLH?w=182&h=273&c=7&r=0&o=5&dpr=1.3&pid=1.7"),
   ];
-
+  //
+  static final bannerList = [
+    qnjbModel("全国线上交友圈", "", "", "66785", "", "https://img.zcool.cn/community/01faad56f23f096ac7257d20dcbe8e.jpg@2o.jpg"),
+    qnjbModel("你的月亮我的心", "", "", "4562", "", "https://img.zcool.cn/community/0129b55b5bff79a801215c8f34614a.png@2o.png"),
+    qnjbModel("全国线下奔现圈", "", "", "4512", "", "https://img.zcool.cn/community/01adbd5a3a4cbca801201a1fd41d6f.jpg@2o.jpg"),
+    qnjbModel("非诚勿扰圈", "", "", "9896", "", "https://img.zcool.cn/community/0186b759659529a8012193a3972281.jpg@1280w_1l_2o_100sh.jpg"),
+    qnjbModel("3公里的爱情短跑", "", "", "999+", "", "https://img.zcool.cn/community/0160f560f511d011013eaf70a7faca.jpg@1280w_1l_2o_100sh.jpg"),
+];
   static final tagList = [
-
     [qnjbTagModel("自由职业", Colors.blue[300]),qnjbTagModel("无房", Colors.blueAccent),qnjbTagModel("无车",AppColors.mainColor),qnjbTagModel("10W以下", Colors.grey)],
     [qnjbTagModel("主播", Colors.blue[300]),qnjbTagModel("1套房", Colors.blueAccent),qnjbTagModel("玛莎",AppColors.mainColor),qnjbTagModel("10W以下", Colors.grey)],
     [qnjbTagModel("模特", Colors.blue[300]),qnjbTagModel("2套房", Colors.blueAccent),qnjbTagModel("718",AppColors.mainColor),qnjbTagModel("10W以下", Colors.grey)],

@@ -14,9 +14,31 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final qnjbList = qnjbData.qnjbList;
+  var qnjbList = qnjbData.qnjbList;
   final tagList = qnjbData.tagList;
+  final bannerList = qnjbData.bannerList;
   int _count = 0;
+
+  void _changeAction(){
+    setState(() {
+      qnjbList = qnjbList.reversed.toList();
+    });
+
+    // Fluttertoast.showToast(
+    //     msg: "请先充值，再换",
+    //     toastLength: Toast.LENGTH_SHORT,
+    //     gravity: ToastGravity.CENTER,
+    //     timeInSecForIosWeb: 1,
+    //     backgroundColor: Colors.black87,
+    //     textColor: Colors.white,
+    //     //web 指定这个颜色，默认自带的丑
+    //     webBgColor: "#000000",
+    //     //这个值，居然是字符串 谁写的，不给web面子
+    //     webPosition: "center",
+    //     fontSize: 16.0
+    // );
+  }
+
   @override
   Widget build(BuildContext context) {
     print("HomePage_build");
@@ -35,19 +57,21 @@ class _HomePageState extends State<HomePage> {
           children: [
             Container(
               height: 280,
-              child: ListView.builder(itemBuilder: (BuildContext context,int index){
+              child:
+              PageView.builder(itemBuilder: (BuildContext context,int index){
+                var bannerModel = bannerList[index];
                 return Container(
                   clipBehavior: Clip.hardEdge,
-                  margin: EdgeInsets.fromLTRB(20, 20, (index == 4 ? 20 : 0), 20),
-                  width:appLayout.size(context).width*0.85,
+                  margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                  // width:(appLayout.size(context).width - 20*2)*0.85,
                   decoration: BoxDecoration(
                     color: Colors.red,
-                    borderRadius:  BorderRadius.all(Radius.circular(10)),
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   child:Stack(
                     fit: StackFit.passthrough,
                     children: [
-                      Positioned(child: Image.asset("assets/images/headerIcon.jpg",fit: BoxFit.cover,)),
+                      Positioned(child: Image.network(bannerModel.headimg,fit: BoxFit.cover,)),
                       Positioned(child: Opacity(opacity: 1,child: Container(
                         decoration: BoxDecoration(
                           color: Colors.black54,
@@ -57,14 +81,14 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Row(
                                 children: [
-                                  Text("全国专科以上相亲群",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white),)
+                                  Text("${bannerModel.name}",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white),)
                                 ],
                               ),
                               // SizedBox(height: 5,),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text("66881入圈",style: TextStyle(fontSize: 14,fontWeight: FontWeight.normal,color: Colors.white),),
+                                  Text("${bannerModel.height}入圈",style: TextStyle(fontSize: 14,fontWeight: FontWeight.normal,color: Colors.white),),
                                   ElevatedButton(onPressed: (){
                                     print("圈子-点击查看");
                                   },
@@ -93,7 +117,15 @@ class _HomePageState extends State<HomePage> {
                 );
               },
                 scrollDirection: Axis.horizontal,
-                itemCount: 5,
+                itemCount: bannerList.length,
+                onPageChanged: (page){
+                  if(page != _count){
+                    _count = page;
+                    print("${page}");
+                    _changeAction();
+                  }
+                },
+
               ),
             ),
             Container(
@@ -124,19 +156,7 @@ class _HomePageState extends State<HomePage> {
                                 onPressed: (){
                                   print("换一换");
                                   // Fluttertoast.showToast(msg: "请先充值，再换");
-                                  Fluttertoast.showToast(
-                                      msg: "请先充值，再换",
-                                      toastLength: Toast.LENGTH_SHORT,
-                                      gravity: ToastGravity.CENTER,
-                                      timeInSecForIosWeb: 1,
-                                      backgroundColor: Colors.black87,
-                                      textColor: Colors.white,
-                                      //web 指定这个颜色，默认自带的丑
-                                      webBgColor: "#000000",
-                                      //这个值，居然是字符串 谁写的，不给web面子
-                                      webPosition: "center",
-                                      fontSize: 16.0
-                                  );
+                                  _changeAction();
                                 },
                                 icon: Icon(Icons.next_plan_outlined),
                                 label: Text("换一换")),
