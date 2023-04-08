@@ -21,19 +21,21 @@ class _ContactPageState extends State<ContactPage> {
         appBar: AppBar(
           elevation: 0,
           // backgroundColor:Colors.white,
-          title: Text("通讯录"),
-          centerTitle: true,
-          bottom: TabBar(
+          // title: Text("通讯录"),
+          // centerTitle: true,
+          title: TabBar(
             indicatorWeight: 3,
+              isScrollable:true,
             //   labelColor:Colors.redAccent,
               labelStyle: TextStyle(fontSize: 18),
               unselectedLabelStyle: TextStyle(fontSize: 16),
-              indicatorPadding: EdgeInsets.symmetric(horizontal: 40),
-              unselectedLabelColor:Colors.white,
+              indicatorPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 3),
+              unselectedLabelColor:Colors.red[50],
+              labelColor: Colors.white,
               indicatorSize: TabBarIndicatorSize.label,
               // splashBorderRadius: BorderRadius.circular(10),
               // indicator:BoxDecoration(
-              //   color:Colors.white,
+              //   color:Colors.red[50],
               //   borderRadius:BorderRadius.circular(50),
               //   // borderRadius:BorderRadius.only(
               //   //   topLeft:Radius.circular(10),
